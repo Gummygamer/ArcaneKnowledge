@@ -469,7 +469,7 @@
 		},
 		cast: function(properties) {
 			if (this._super(properties)) {
-				this.owner.setHealth(this.owner.currentHealth + 1000000);
+				this.owner.setHealth(this.owner.currentHealth + 1);
 				return true;
 			}
 
@@ -601,8 +601,8 @@
 				1: new exports.RecoverSpell(this)
 			};
 
-			this.maxHealth = 100;
-			this.currentHealth = 100;
+			this.maxHealth = 200;
+			this.currentHealth = 200;
 			
 			this.exp = 0;
 
@@ -726,7 +726,7 @@
 			else {
 
 				if (collisionEntity instanceof exports.Mob) {
-					collisionEntity.onHurt(this, 20 - collisionEntity.exp);
+					collisionEntity.onHurt(this, 40 - collisionEntity.exp);
 					collisionEntity.exp = collisionEntity.exp + 1;
 				}
 
