@@ -606,7 +606,7 @@
 			
 			this.setHealth(this.currentHealth - finaldamage);
 			
-			hurtingEntity.exp ´= hurtingEntity.exp + finaldamage;
+			hurtingEntity.exp = hurtingEntity.exp + finaldamage;
 
 			if (this.onHurtCallback) {
 				this.onHurtCallback(hurtingEntity, finaldamage);
