@@ -588,6 +588,8 @@
 
 			this.maxHealth = 100;
 			this.currentHealth = 100;
+			
+			this.exp = 0;
 
 			if (this.properties) {
 				this.name = this.properties.name || null;
@@ -600,10 +602,14 @@
 				this.remove();
 		},
 		onHurt: function(hurtingEntity, damage) {
-			this.setHealth(this.currentHealth - damage);
+			var finaldamage = damage - this.exp + hurtingEntity.exp;
+			
+			this.setHealth(this.currentHealth - finaldamage);
+			
+			hurtingEntity.exp ´= hurtingEntity.exp + finaldamage;
 
 			if (this.onHurtCallback) {
-				this.onHurtCallback(hurtingEntity, damage);
+				this.onHurtCallback(hurtingEntity, finaldamage);
 			}
 		},
 		onCollision: function(collisionEntity, intersection) {
