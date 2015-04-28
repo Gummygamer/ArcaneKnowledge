@@ -599,6 +599,7 @@
 			this.collidable = true;
 			this.spellBook = {
 				0: new exports.FireBallSpell(this)
+				2: new.exports.RecoverSpell(this)
 			};
 
 			this.maxHealth = 100;
