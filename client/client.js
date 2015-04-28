@@ -258,7 +258,12 @@ var handleUserMovement = function() {
 	
 	if (Key.isUp(Key.Q)) {
 
-		player.setHealth(player.currentHealth + 1); 
+		var spellType = 2;
+
+		if (player.castSpell(spellType)) {
+			console.log('[Cast Spell] spellType = ' + spellType);
+			socket.emit('packet', new engine.CastSpellPacket(spellType));
+		}
 	}
 };
 
