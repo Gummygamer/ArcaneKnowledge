@@ -602,14 +602,11 @@
 				this.remove();
 		},
 		onHurt: function(hurtingEntity, damage) {
-			var finaldamage = damage - this.exp + hurtingEntity.exp;
 			
-			this.setHealth(this.currentHealth - finaldamage);
-			
-			hurtingEntity.exp = hurtingEntity.exp + finaldamage;
+			this.setHealth(this.currentHealth - damage);
 
 			if (this.onHurtCallback) {
-				this.onHurtCallback(hurtingEntity, finaldamage);
+				this.onHurtCallback(hurtingEntity, damage);
 			}
 		},
 		onCollision: function(collisionEntity, intersection) {
