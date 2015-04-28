@@ -711,7 +711,8 @@
 			else {
 
 				if (collisionEntity instanceof exports.Mob) {
-					collisionEntity.onHurt(this, 10);
+					collisionEntity.onHurt(this, 20 - collisionEntity.exp);
+					collisionEntity.exp = collisionEntity.exp + 1;
 				}
 
 				this.remove();
