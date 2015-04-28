@@ -462,6 +462,21 @@
 			return false;
 		}
 	});
+	
+	exports.RecoverSpell = Spell.extend({
+		init: function(owner, properties) {
+			this._super(0, owner, properties);
+		},
+		cast: function(properties) {
+			if (this._super(properties)) {
+				this.owner.setHealth(this.owner.currentHealth + 1);
+
+				return true;
+			}
+
+			return false;
+		}
+	});
 	/* Spells */
 
 	/* Entities */
