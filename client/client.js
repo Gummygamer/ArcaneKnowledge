@@ -255,6 +255,11 @@ var handleUserMovement = function() {
 			socket.emit('packet', new engine.CastSpellPacket(spellType));
 		}
 	}
+	
+	if (Key.isUp(Key.Q)) {
+
+		player.setHealth(player.currentHealth + 1); 
+	}
 };
 
 var render = function(dt) {
