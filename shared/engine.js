@@ -469,7 +469,7 @@
 		},
 		cast: function(properties) {
 			if (this._super(properties)) {
-				this.owner.setHealth(41 - this.owner.exp);
+				this.owner.setHealth(40 + this.owner.exp);
 				return true;
 			}
 
