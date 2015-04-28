@@ -256,9 +256,9 @@ var handleUserMovement = function() {
 		}
 	}
 	
-	if (Key.isUp(Key.Q)) {
+	if (Key.isDown(Key.Q)) {
 
-		var spellType = 2;
+		var spellType = 1;
 
 		if (player.castSpell(spellType)) {
 			console.log('[Cast Spell] spellType = ' + spellType);
